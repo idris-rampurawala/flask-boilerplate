@@ -17,6 +17,7 @@ def before_request_func():
 
 @core.route('/test', methods=['GET'])
 def test():
+    logger.info('app test route hit')
     test_task.delay()
     return 'Congratulations! Your core-app test route is running!'
 

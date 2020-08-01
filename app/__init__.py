@@ -1,5 +1,4 @@
-import logging
-from logging.config import dictConfig
+import logging.config
 from os import environ
 
 from celery import Celery
@@ -7,8 +6,7 @@ from dotenv import load_dotenv
 from flask import Flask
 from flask_cors import CORS
 
-from app.constants import APP_NAME
-from config import config
+from .config import config as app_config
 
 celery = Celery(__name__)
 
@@ -17,9 +15,9 @@ def create_app():
     # loading env vars from .env file
     load_dotenv()
     APPLICATION_ENV = get_environment()
-    logging.config.dictConfig(config[APPLICATION_ENV].LOGGING)
-    app = Flask(APP_NAME)
-    app.config.from_object(config[APPLICATION_ENV])
+    logging.config.dictConfig(app_config[APPLICATION_ENV].LOGGING)
+    app = Flask(app_config[APPLICATION_ENV].APP_NAME)
+    app.config.from_object(app_config[APPLICATION_ENV])
 
     CORS(app, resources={r'/api/*': {'origins': '*'}})
 

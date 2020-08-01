@@ -2,9 +2,7 @@ from os import environ, path
 
 from dotenv import load_dotenv
 
-from app.constants import APP_NAME
-
-basedir = path.abspath(path.dirname(__file__))
+basedir = path.abspath(path.join(path.dirname(__file__), '..'))
 # loading env vars from .env file
 load_dotenv()
 
@@ -12,6 +10,7 @@ load_dotenv()
 class BaseConfig(object):
     ''' Base config class. '''
 
+    APP_NAME = environ.get('APP_NAME') or 'flask-boilerplate'
     ORIGINS = ['*']
     EMAIL_CHARSET = 'UTF-8'
     API_KEY = environ.get('API_KEY')
