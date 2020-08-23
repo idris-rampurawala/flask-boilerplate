@@ -2,7 +2,9 @@
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](LICENSE)
 
-  Flask Boilerplate to quickly get started with production grade flask application with some additional packages and configuration prebuilt. 
+  Flask Boilerplate to quickly get started with production grade flask application with some additional packages and configuration prebuilt.
+
+  You can find an in-depth article on this implementation [here](https://dev.to/idrisrampurawala/flask-boilerplate-structuring-flask-app-3kcd).
 
 # Contributing
   We encourage you to contribute to Flask Boilerplate! Please check out the [Contributing](CONTRIBUTING.md) guidelines about how to proceed.
