@@ -13,7 +13,7 @@
 
 ### Prerequisites
 
-- Python 3.8.2 or higher
+- Python 3.9.2 or higher
 - Up and running Redis client
 
 ### Project setup
@@ -35,6 +35,9 @@ $ pipenv --three
 $ pipenv shell
 # install all dependencies (include -d for installing dev dependencies)
 $ pipenv install -d
+
+# if you have multiple python 3 versions installed then
+$ pipenv install -d --python 3.9
 ```
 ### Configuration
 
@@ -52,7 +55,7 @@ $ pipenv install -d
 - Celery worker can be started with following command
 ```sh
 # run following command in a separate terminal
-$ celery worker -A celery_worker.celery -l=info  
+$ celery -A celery_worker.celery worker -l=info  
 # (append `--pool=solo` for windows)
 ```
 
