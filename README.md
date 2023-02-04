@@ -23,6 +23,10 @@ $ git clone https://github.com/idris-rampurawala/flask-boilerplate.git
 # move to the project folder
 $ cd flask-boilerplate
 ```
+If you want to install redis via docker
+```sh
+$ docker run -d --name="flask-boilerplate-redis" -p 6379:6379 redis
+```
 
 ### Creating virtual environment
 
@@ -55,7 +59,7 @@ $ pipenv install -d --python 3.9
 - Celery worker can be started with following command
 ```sh
 # run following command in a separate terminal
-$ celery -A celery_worker.celery worker -l=info  
+$ celery -A celery_worker.celery worker --loglevel='INFO'  
 # (append `--pool=solo` for windows)
 ```
 
