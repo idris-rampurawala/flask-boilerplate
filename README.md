@@ -13,7 +13,7 @@
 
 ### Prerequisites
 
-- Python 3.9.2 or higher
+- Python 3.11.3 or higher
 - Up and running Redis client
 
 ### Project setup
@@ -41,7 +41,7 @@ $ pipenv shell
 $ pipenv install -d
 
 # if you have multiple python 3 versions installed then
-$ pipenv install -d --python 3.9
+$ pipenv install -d --python 3.11
 ```
 ### Configuration
 
